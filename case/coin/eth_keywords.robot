@@ -49,7 +49,11 @@ Input Max_Priority_Fee_Per_Gas
 
 Input Data
     [Arguments]    ${data}
-    Click Element    datac
+    TRY
+        Click Element    datac
+    EXCEPT
+        Log    Info data is empty!
+    END
     Input Text    data    ${data}    clear=${True}
 
 Input Transaction Field

@@ -8,9 +8,9 @@ Suite Teardown      Close Browser
 
 
 *** Test Cases ***
-To Dot Page    To Page    dot
+To Dot Page    To Page    polkadot
 
-Dot Mnemonic-Derivation-Address    Address Derive From Index    ${INDEX}    dot
+Dot Mnemonic-Derivation-Address    Address Derive From Index    ${INDEX}    polkadot
 
 Dot Transfer    Sign
     ...    8

@@ -16,6 +16,8 @@ ${ETHEREUM PATH}    m/44'/60'/0'/0/INDEX    # Ethereum默认path
 ${EOS PATH}         m/44'/194'/0'/0/INDEX    # Eos默认path
 ${TRX PATH}         m/44'/195'/0'/0/INDEX    # Trx 默认path
 ${DOT PATH}         //polkadot//INDEX    # Polkadot 默认path
+${FILECOIN PATH}    m/44'/461'/0'/0/INDEX    # filecoin 默认path
+${XRP PATH}         m/44'/144'/0'/0/INDEX    # XRP 默认path
 
 
 *** Keywords ***
@@ -83,14 +85,18 @@ Address Derive From Index
     ${Path Prefix} =    Set Variable    ${EMPTY}
     IF    ${coin == 'aptos'}
         ${Path Prefix } =    Set Variable    ${APTOS PATH}
-    ELSE IF    ${coin == 'dot'}
+    ELSE IF    ${coin == 'polkadot'}
         ${Path Prefix } =    Set Variable    ${DOT PATH}
     ELSE IF    ${coin == 'eth'}
         ${Path Prefix} =    Set Variable    ${ETHEREUM PATH}
     ELSE IF    ${coin == 'eos'}
         ${Path Prefix} =    Set Variable    ${EOS PATH}
-    ELSE IF    ${coin == 'trx'}
+    ELSE IF    ${coin == 'tron'}
         ${Path Prefix} =    Set Variable    ${TRX PATH}
+    ELSE IF    ${coin == 'filecoin'}
+        ${Path Prefix} =    Set Variable    ${FILECOIN PATH}
+    ELSE IF    ${coin == 'xrp'}
+        ${Path Prefix} =    Set Variable    ${XRP PATH}
     END
     ${path} =    Get Path By Index    ${Path Prefix}    ${index}
     Input Path    ${path}

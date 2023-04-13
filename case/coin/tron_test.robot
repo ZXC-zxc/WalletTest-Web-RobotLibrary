@@ -10,7 +10,7 @@ Suite Teardown      Close Browser
 *** Test Cases ***
 To Tron Page    To Page    Tron
 
-Tron Mnemonic-Derivation-Address    Address Derive From Index    ${INDEX}    Tron
+Tron Mnemonic-Derivation-Address    Address Derive From Index    ${INDEX}    tron
 
 Tron Transfer    Sign
     ...    2b72b05b7674b257

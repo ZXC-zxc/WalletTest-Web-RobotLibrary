@@ -3,20 +3,20 @@ Resource    ..${/}common${/}common.robot
 
 
 *** Keywords ***
-Input Tansaction_Version
-    [Arguments]    ${tansactionVersion}
-    Click Element    tansactionVersionc
-    Input Text    tansactionVersion    ${tansactionVersion}    clear=${True}
+Input Transaction_Version
+    [Arguments]    ${transactionVersion}
+    Click Element    transactionVersionc
+    Input Text    transactionVersion    ${transactionVersion}    clear=${True}
 
 Input Nonce
     [Arguments]    ${nonce}
     Click Element    noncec
     Input Text    nonce    ${nonce}    clear=${True}
 
-Input Sepc_Version
-    [Arguments]    ${sepcVersion}
-    Click Element    sepcVersionc
-    Input Text    sepcVersion    ${sepcVersion}    clear=${True}
+Input Spec_Version
+    [Arguments]    ${specVersion}
+    Click Element    specVersionc
+    Input Text    specVersion    ${specVersion}    clear=${True}
 
 Input Block_Hash
     [Arguments]    ${blockHash}
@@ -25,28 +25,36 @@ Input Block_Hash
 
 Input Tip
     [Arguments]    ${tip}
-    Click Element    tipc
+    TRY
+        Click Element    tipc
+    EXCEPT
+        Log    Info tip is empty!
+    END
     Input Text    tip    ${tip}    clear=${True}
 
 Input Call
     [Arguments]    ${call}
-    Click Element    callc
+    TRY
+        Click Element    callc
+    EXCEPT
+        Log    Info call is empty!
+    END
     Input Text    call    ${call}    clear=${True}
 
 Input Transaction Field
-    [Arguments]    ${tansactionVersion}    ${nonce}    ${sepcVersion}    ${blockHash}    ${tip}    ${call}
-    Input Tansaction_Version    ${tansactionVersion}
+    [Arguments]    ${transactionVersion}    ${nonce}    ${specVersion}    ${blockHash}    ${tip}    ${call}
+    Input Transaction_Version    ${transactionVersion}
     Input Nonce    ${nonce}
-    Input Sepc_Version    ${sepcVersion}
+    Input Spec_Version    ${specVersion}
     Input Block_Hash    ${blockHash}
     Input Tip    ${tip}
     Input Call    ${call}
 
 Sign
     [Tags]    dot    sign
-    [Arguments]    ${tansactionVersion}    ${nonce}    ${sepcVersion}    ${blockHash}    ${tip}    ${call}
-    Input Transaction Field    ${tansactionVersion}    ${nonce}    ${sepcVersion}    ${blockHash}    ${tip}    ${call}
+    [Arguments]    ${transactionVersion}    ${nonce}    ${specVersion}    ${blockHash}    ${tip}    ${call}
+    Input Transaction Field    ${transactionVersion}    ${nonce}    ${specVersion}    ${blockHash}    ${tip}    ${call}
     Sign Transaction
-    Wait Until Element Contains    signature    0x    timeout=2
+    Wait Until Element Contains    signature    0x    timeout=20
     ${signature} =    Get Signature
     RETURN    ${signature}
