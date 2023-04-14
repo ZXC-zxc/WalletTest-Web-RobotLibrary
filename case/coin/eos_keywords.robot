@@ -60,6 +60,6 @@ Sign Eos
     ...    ${delaySec}
     ...    ${actions}
     Sign Transaction
-    Wait Until Element Contains    signature    SIG_K1    timeout=5
+    Wait Until Element Contains    signature    SIG_K1    timeout=20
     ${signature} =    Get Signature
     RETURN    ${signature}

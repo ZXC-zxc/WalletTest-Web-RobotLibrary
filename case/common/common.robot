@@ -29,6 +29,11 @@ Open Browser To Home Page
 Setup Main Suite
     Open Browser To Home Page
 
+Suite Template Setup
+    [Arguments]    ${coin}
+    Open Browser To Home Page
+    Get Account    ${coin}
+
 To Page
     [Arguments]    ${coin}
     Go To    ${SERVER}/${coin}

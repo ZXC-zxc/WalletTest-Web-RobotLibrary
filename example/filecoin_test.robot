@@ -8,7 +8,7 @@ Suite Teardown      Close Browser
 
 
 *** Test Cases ***
-To Filecoin Page    To Page    fil
+To Filecoin Page    To Page    filecoin
 
 Filecoin Mnemonic-Derivation-Address    Address Derive From Index    ${INDEX}    filecoin
 
