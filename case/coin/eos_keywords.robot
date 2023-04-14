@@ -48,7 +48,7 @@ Input Transaction Field
     Input Delay_Sec    ${delaySec}
     Input Actions    ${actions}
 
-Sign
+Sign Eos
     [Tags]    eos    sign
     [Arguments]    ${expiration}    ${refBlockNum}    ${refBlockPrefix}    ${maxNetUsageWords}    ${maxCpuUsageMs}    ${delaySec}    ${actions}
     Input Transaction Field

@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Aptos    Example.
 
-Resource            aptos_keywords.robot
+Resource            ..${/}case${/}coin${/}aptos_keywords.robot
 
 Suite Setup         Setup Main Suite
 Suite Teardown      Close Browser
@@ -12,7 +12,7 @@ To Aptos Page    To Page    aptos
 
 Aptos Mnemonic-Derivation-Address    Address Derive From Index    ${INDEX}    aptos
 
-Aptos Transfer    Sign
+Aptos Transfer    Sign Aptos
     ...    0x29cf83251eba17b6043f469e60b426c945f6a6c26fba02874961ceedd62ad6c9
     ...    1000000
     ...    0x1::aptos_account

@@ -51,7 +51,7 @@ Input Transaction Field
 Get Payload
     ${payload} =    Get Value    payload
     RETURN    ${payload}
-Sign
+Sign Tron
     [Tags]    tron    sign
     [Arguments]    ${refBlockHash}    ${refBlockBytes}    ${refBlockNum}    ${expiration}    ${timestamp}    ${feeLimit}    ${contracts}
     Input Transaction Field

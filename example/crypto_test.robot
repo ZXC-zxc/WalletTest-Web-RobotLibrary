@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Crypto Example.
 
-Resource            crypto_keywords.robot
+Resource            ..${/}case${/}crypto/crypto_keywords.robot
 
 Suite Setup         Setup Main Suite
 Suite Teardown      Close Browser

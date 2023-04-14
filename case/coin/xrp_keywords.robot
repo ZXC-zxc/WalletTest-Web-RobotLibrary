@@ -16,7 +16,7 @@ Input Transaction Field
     [Arguments]    ${transaction}
     Input Transaction    ${transaction}
 
-Sign
+Sign Xrp
     [Tags]    xrp    sign
     [Arguments]    ${transaction}
     Input Transaction Field    ${transaction}

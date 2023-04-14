@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Tron    Example.
 
-Resource            tron_keywords.robot
+Resource            ..${/}case${/}coin${/}tron_keywords.robot
 
 Suite Setup         Setup Main Suite
 Suite Teardown      Close Browser
@@ -12,7 +12,7 @@ To Tron Page    To Page    Tron
 
 Tron Mnemonic-Derivation-Address    Address Derive From Index    ${INDEX}    tron
 
-Tron Transfer    Sign
+Tron Transfer    Sign Tron
     ...    2b72b05b7674b257
     ...    9148
     ...    0

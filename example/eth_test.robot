@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Ethereum    Example.
 
-Resource            eth_keywords.robot
+Resource            ..${/}case${/}coin${/}eth_keywords.robot
 
 Suite Setup         Setup Main Suite
 Suite Teardown      Close Browser
@@ -10,9 +10,9 @@ Suite Teardown      Close Browser
 *** Test Cases ***
 To ETH Page    To Page    ethereum
 
-ETH Mnemonic-Derivation-Address     Address Derive From Index    ${INDEX}    eth
+ETH Mnemonic-Derivation-Address    Address Derive From Index    ${INDEX}    eth
 
-ETH Transfer    Sign
+ETH Transfer    Sign Eth
     ...    0x0000000000000000000000000000000000000000
     ...    0
     ...    100000000

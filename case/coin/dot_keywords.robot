@@ -50,7 +50,7 @@ Input Transaction Field
     Input Tip    ${tip}
     Input Call    ${call}
 
-Sign
+Sign Dot
     [Tags]    dot    sign
     [Arguments]    ${transactionVersion}    ${nonce}    ${specVersion}    ${blockHash}    ${tip}    ${call}
     Input Transaction Field    ${transactionVersion}    ${nonce}    ${specVersion}    ${blockHash}    ${tip}    ${call}

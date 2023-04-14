@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Eos    Example.
 
-Resource            eos_keywords.robot
+Resource            ..${/}case${/}coin${/}eos_keywords.robot
 
 Suite Setup         Setup Main Suite
 Suite Teardown      Close Browser
@@ -11,7 +11,7 @@ Suite Teardown      Close Browser
 To EOS Page    To Page    eos
 
 Eos Mnemonic-Derivation-Address   Address Derive From Index    ${INDEX}    eos
-EOS Transfer    Sign
+EOS Transfer    Sign Eos
     ...    2020-08-06T09:50:56
     ...    13949
     ...    241701672

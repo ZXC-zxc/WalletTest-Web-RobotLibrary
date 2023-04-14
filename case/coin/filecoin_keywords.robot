@@ -58,7 +58,7 @@ Input Transaction Field
     Input Gas_Premium    ${gasPremium}
     Input Params    ${params}
 
-Sign
+Sign Fil
     [Tags]    filecoin    sign
     [Arguments]    ${to}    ${nonce}    ${value}    ${method}    ${gasLimit}    ${gasFeeCap}    ${gasPremium}    ${params}
     Input Transaction Field

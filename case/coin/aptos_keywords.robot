@@ -70,7 +70,7 @@ Get Raw Transaction
     ${transactonRaw} =    Get Value    txRaw
     RETURN    ${transactonRaw}
 
-Sign
+Sign Aptos
     [Tags]    aptos    sign
     [Arguments]    ${to}    ${amount}    ${module}    ${func}    ${maxGasAmount}    ${typeTag}    ${gasUnitPrice}    ${chainId}    ${sequenceNumber}    ${expTimeStamp}
     Input Transaction Field

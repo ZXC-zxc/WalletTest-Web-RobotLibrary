@@ -75,7 +75,7 @@ Get Raw Transaction
     ${transactonRaw} =    Get Value    txRaw
     RETURN    ${transactonRaw}
 
-Sign
+Sign Eth
     [Tags]    ethereum    sign
     [Arguments]    ${to}    ${nonce}    ${value}    ${data}    ${type}    ${gasLimit}    ${gasPrice}    ${chainId}    ${maxPriorityFeePerGas}    ${maxFeePerGas}
     Input Transaction Field

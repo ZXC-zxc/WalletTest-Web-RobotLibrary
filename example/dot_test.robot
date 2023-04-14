@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       dot    Example.
 
-Resource            dot_keywords.robot
+Resource            ..${/}case${/}coin${/}dot_keywords.robot
 
 Suite Setup         Setup Main Suite
 Suite Teardown      Close Browser
@@ -12,7 +12,7 @@ To Dot Page    To Page    polkadot
 
 Dot Mnemonic-Derivation-Address    Address Derive From Index    ${INDEX}    polkadot
 
-Dot Transfer    Sign
+Dot Transfer    Sign Dot
     ...    8
     ...    0
     ...    9130
