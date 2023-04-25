@@ -29,7 +29,7 @@ Open Browser To Home Page
 Setup Main Suite
     Open Browser To Home Page
 
-Suite Template Setup
+Setup Template Suite
     [Arguments]    ${coin}
     Open Browser To Home Page
     Get Account    ${coin}
@@ -66,9 +66,21 @@ Input Path
     Click Element    pathc
     Input Text    path    ${path}    clear=${True}
 
+Get Mnemonic
+    ${mnemonic} =    Get Value    mnemonic
+    RETURN    ${mnemonic}
+
 Get Path
     ${path} =    Get Value    path
     RETURN    ${path}
+
+Get Payload
+    ${payload} =    Get Value    payload
+    RETURN    ${payload}
+
+Get Raw Transaction
+    ${transactonRaw} =    Get Value    txRaw
+    RETURN    ${transactonRaw}
 
 Get Path By Index
     [Arguments]    ${PATH}    ${index}
@@ -83,6 +95,14 @@ Get Platform
 Get Signature
     ${signature} =    Get Value    signature
     RETURN    ${signature}
+
+Get PublicKey
+    ${publicKey} =    Get Value    publicKey
+    RETURN    ${publicKey}
+
+Get Address
+    ${address} =    Get Value    address
+    RETURN    ${address}
 
 Address Derive From Index
     [Tags]    address    derive
@@ -108,3 +128,17 @@ Address Derive From Index
     Obtain Account
     ${address} =    Get Value    address
     RETURN    ${address}
+
+PublicKey Derive From Path
+    [Arguments]    ${path}
+    Input Path    ${path}
+    Obtain Account
+    ${publicKey} =    Get PublicKey
+    ${publicKey} =    Replace String    ${publicKey}    0x    ${EMPTY}
+    RETURN    ${publicKey}
+
+Obtain Account From Mnemonic And Path
+    [Arguments]    ${mnemonic}    ${path}
+    Input Path    ${path}
+    Input Mnemonic    ${mnemonic}
+    Obtain Account

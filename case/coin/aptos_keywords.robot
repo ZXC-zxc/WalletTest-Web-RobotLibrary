@@ -3,77 +3,73 @@ Resource    ..${/}common${/}common.robot
 
 
 *** Keywords ***
-Input To
+Input To Aptos
     [Arguments]    ${to}
     Click Element    toc
     Input Text    to    ${to}    clear=${True}
 
-Input Amount
+Input Amount Aptos
     [Arguments]    ${amount}
     Click Element    amountc
     Input Text    amount    ${amount}    clear=${True}
 
-Input Max_Gas_Amount
+Input Max_Gas_Amount Aptos
     [Arguments]    ${maxGasAmount}
     Click Element    maxGasAmountc
     Input Text    maxGasAmount    ${maxGasAmount}    clear=${True}
 
-Input Gas_Unit_Price
+Input Gas_Unit_Price Aptos
     [Arguments]    ${gasUnitPrice}
     Click Element    gasUnitPricec
     Input Text    gasUnitPrice    ${gasUnitPrice}    clear=${True}
 
-Input Chain_Id
+Input Chain_Id Aptos
     [Arguments]    ${chainId}
     Click Element    chainIdc
     Input Text    chainId    ${chainId}    clear=${True}
 
-Input Sequence_Number
+Input Sequence_Number Aptos
     [Arguments]    ${sequenceNumber}
     Click Element    sequenceNumberc
     Input Text    sequenceNumber    ${sequenceNumber}    clear=${True}
 
-Select Module
+Select Module Aptos
     [Arguments]    ${module}
     Click Element    module
     Click Element    ${module}
 
-Select Func
+Select Func Aptos
     [Arguments]    ${func}
     Click Element    func
     Click Element    ${func}
 
-Select Type_Tag
+Select Type_Tag Aptos
     [Arguments]    ${typeTag}
     Click Element    typeTag
     Click Element    ${typeTag}
 
-Input Exp_TimeStamp
+Input Exp_TimeStamp Aptos
     [Arguments]    ${expTimeStamp}
     Click Element    expTimeStampc
     Input Text    expTimeStamp    ${expTimeStamp}    clear=${True}
 
-Input Transaction Field
+Input Transaction Field Aptos
     [Arguments]    ${to}    ${amount}    ${module}    ${func}    ${maxGasAmount}    ${typeTag}    ${gasUnitPrice}    ${chainId}    ${sequenceNumber}    ${expTimeStamp}
-    Input To    ${to}
-    Input Amount    ${amount}
-    Select Module    ${module}
-    Select Func    ${func}
-    Select Type_Tag    ${typeTag}
-    Input Max_Gas_Amount    ${maxGasAmount}
-    Input Gas_Unit_Price    ${gasUnitPrice}
-    Input Chain_Id    ${chainId}
-    Input Sequence_Number    ${sequenceNumber}
-    Input Exp_TimeStamp    ${expTimeStamp}
-
-Get Raw Transaction
-    ${transactonRaw} =    Get Value    txRaw
-    RETURN    ${transactonRaw}
+    Input To Aptos    ${to}
+    Input Amount Aptos    ${amount}
+    Select Module Aptos    ${module}
+    Select Func Aptos    ${func}
+    Select Type_Tag Aptos    ${typeTag}
+    Input Max_Gas_Amount Aptos    ${maxGasAmount}
+    Input Gas_Unit_Price Aptos    ${gasUnitPrice}
+    Input Chain_Id Aptos    ${chainId}
+    Input Sequence_Number Aptos    ${sequenceNumber}
+    Input Exp_TimeStamp Aptos    ${expTimeStamp}
 
 Sign Aptos
     [Tags]    aptos    sign
     [Arguments]    ${to}    ${amount}    ${module}    ${func}    ${maxGasAmount}    ${typeTag}    ${gasUnitPrice}    ${chainId}    ${sequenceNumber}    ${expTimeStamp}
-    Input Transaction Field
+    Input Transaction Field Aptos
     ...    ${to}
     ...    ${amount}
     ...    ${module}
@@ -87,9 +83,3 @@ Sign Aptos
     Sign Transaction
     ${txRaw} =    Get Raw Transaction
     RETURN    ${txRaw}
-
-Get Payload
-    [Tags]    payload
-    [Arguments]    ${to}    ${amount}    ${module}    ${func}    ${typeTag}
-    ${payload} =    Get Payload    ${to}    ${amount}    ${module}    ${func}    ${typeTag}
-    RETURN    ${payload}

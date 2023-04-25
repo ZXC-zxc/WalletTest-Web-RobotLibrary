@@ -4,7 +4,7 @@ Documentation       Test Template .
 Library             DataDriver    file=.${/}data${/}TestCase.xls    sheet_name=PolkadotSignTx
 Resource            ..${/}case${/}coin${/}dot_keywords.robot
 
-Suite Setup         Suite Template Setup    polkadot    #aptos;ethereum;polkadot;xrp;filecoin;eos;tron
+Suite Setup         Setup Template Suite    polkadot    #aptos;ethereum;polkadot;xrp;filecoin;eos;tron
 Suite Teardown      Close Browser
 Test Template       Sign POLKADOT Transaction
 
@@ -79,4 +79,4 @@ Template POLKADOT Example    ${transactionVersion}    ${nonce}    ${specVersion}
 Sign POLKADOT Transaction
     [Tags]    dot    sign
     [Arguments]    ${transactionVersion}    ${nonce}    ${specVersion}    ${blockHash}    ${tip}    ${call}
-    Sign Dot    ${transactionVersion}    ${nonce}    ${specVersion}    ${blockHash}    ${tip}    ${call}
+    dot_keywords.Sign Dot    ${transactionVersion}    ${nonce}    ${specVersion}    ${blockHash}    ${tip}    ${call}

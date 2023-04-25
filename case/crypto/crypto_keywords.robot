@@ -12,31 +12,31 @@ ${PRIVATE KEY}              4B3867D80E66A985176A4942B98D523F0E1E7DFF8203A8DB8538
 
 
 *** Keywords ***
-Input Private_Key
+Input Private_Key Crypto
     [Arguments]    ${privateKey}
     Click Element    privateKeyc
     Input Text    privateKey    ${privateKey}    clear=${True}
 
-Input Message
+Input Message Crypto
     [Arguments]    ${message}
     Click Element    messagec
     Input Text    message    ${message}    clear=${True}
 
-Input AuxRand
+Input AuxRand Crypto
     [Arguments]    ${auxRand}
     Click Element    auxRandc
     Input Text    auxRand    ${auxRand}    clear=${True}
 
-Select Crypto_Type
+Select Crypto_Type Crypto
     [Arguments]    ${cryptoType}
     Click Element    cryptoType
     Click Element    ${cryptoType}
 
-Sign
+Sign Crypto
     [Tags]    crypto
     [Arguments]    ${cryptoType}    ${privateKey}
-    Select Crypto_Type    ${cryptoType}
-    Input Private_Key    ${privateKey}
+    Select Crypto_Type Crypto    ${cryptoType}
+    Input Private_Key Crypto    ${privateKey}
     Random Message
     Sign Message
     ${signature} =    Get Signature

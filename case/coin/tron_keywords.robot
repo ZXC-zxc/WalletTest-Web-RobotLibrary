@@ -3,58 +3,55 @@ Resource    ..${/}common${/}common.robot
 
 
 *** Keywords ***
-Input Ref_Block_Num
+Input Ref_Block_Num Tron
     [Arguments]    ${refBlockNum}
     Click Element    refBlockNumc
     Input Text    refBlockNum    ${refBlockNum}    clear=${True}
 
-Input Ref_Block_Hash
+Input Ref_Block_Hash Tron
     [Arguments]    ${refBlockHash}
     Click Element    refBlockHashc
     Input Text    refBlockHash    ${refBlockHash}    clear=${True}
 
-Input Ref_Block_Bytes
+Input Ref_Block_Bytes Tron
     [Arguments]    ${refBlockBytes}
     Click Element    refBlockBytesc
     Input Text    refBlockBytes    ${refBlockBytes}    clear=${True}
 
-Input Expiration
+Input Expiration Tron
     [Arguments]    ${expiration}
     Click Element    expirationc
     Input Text    expiration    ${expiration}    clear=${True}
 
-Input Timestamp
+Input Timestamp Tron
     [Arguments]    ${timestamp}
     Click Element    timestampc
     Input Text    timestamp    ${timestamp}    clear=${True}
 
-Input Fee_Limit
+Input Fee_Limit Tron
     [Arguments]    ${feeLimit}
     Click Element    feeLimitc
     Input Text    feeLimit    ${feeLimit}    clear=${True}
 
-Input Contracts
+Input Contracts Tron
     [Arguments]    ${contracts}
     Click Element    contractsc
     Input Text    contracts    ${contracts}    clear=${True}
 
-Input Transaction Field
+Input Transaction Field Tron
     [Arguments]    ${refBlockHash}    ${refBlockBytes}    ${refBlockNum}    ${expiration}    ${timestamp}    ${feeLimit}    ${contracts}
-    Input Ref_Block_Hash    ${refBlockHash}
-    Input Ref_Block_Bytes    ${refBlockBytes}
-    Input Ref_Block_Num    ${refBlockNum}
-    Input Expiration    ${expiration}
-    Input Timestamp    ${timestamp}
-    Input Fee_Limit    ${feeLimit}
-    Input Contracts    ${contracts}
+    Input Ref_Block_Hash Tron    ${refBlockHash}
+    Input Ref_Block_Bytes Tron    ${refBlockBytes}
+    Input Ref_Block_Num Tron    ${refBlockNum}
+    Input Expiration Tron    ${expiration}
+    Input Timestamp Tron    ${timestamp}
+    Input Fee_Limit Tron    ${feeLimit}
+    Input Contracts Tron    ${contracts}
 
-Get Payload
-    ${payload} =    Get Value    payload
-    RETURN    ${payload}
 Sign Tron
     [Tags]    tron    sign
     [Arguments]    ${refBlockHash}    ${refBlockBytes}    ${refBlockNum}    ${expiration}    ${timestamp}    ${feeLimit}    ${contracts}
-    Input Transaction Field
+    Input Transaction Field Tron
     ...    ${refBlockHash}
     ...    ${refBlockBytes}
     ...    ${refBlockNum}
