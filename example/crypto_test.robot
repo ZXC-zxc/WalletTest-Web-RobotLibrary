@@ -10,8 +10,14 @@ Suite Teardown      Close Browser
 *** Test Cases ***
 To Crypto Page    To Page    crypto
 
-Schnorr    Sign Crypto    ${CRYPTO TYPE SCHNORR}    ${PRIVATE KEY}
+Schnorr Select    Select Crypto_Type Crypto    ${CRYPTO TYPE SCHNORR}
 
-Ecdsa    Sign Crypto    ${CRYPTO TYPE ECDSA}    ${PRIVATE KEY}
+Schnorr Sign    Sign Random Message Crypto
 
-Ed25519    Sign Crypto    ${CRYPTO TYPE ED25519}    ${PRIVATE KEY}
+Ecdsa Select    Select Crypto_Type Crypto    ${CRYPTO TYPE ECDSA}
+
+Ecdsa Sign    Sign Random Message Crypto
+
+Ed25519 Select    Select Crypto_Type Crypto    ${CRYPTO TYPE ED25519}
+
+Ed25519 Sign    Sign Random Message Crypto

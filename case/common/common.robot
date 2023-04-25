@@ -66,6 +66,11 @@ Input Path
     Click Element    pathc
     Input Text    path    ${path}    clear=${True}
 
+Input Message
+    [Arguments]    ${message}
+    Click Element    messagec
+    Input Text    message    ${message}    clear=${True}
+
 Get Mnemonic
     ${mnemonic} =    Get Value    mnemonic
     RETURN    ${mnemonic}
@@ -103,6 +108,10 @@ Get PublicKey
 Get Address
     ${address} =    Get Value    address
     RETURN    ${address}
+
+Get Message
+    ${message} =    Get Value    message
+    RETURN    ${message}
 
 Address Derive From Index
     [Tags]    address    derive
