@@ -113,6 +113,10 @@ Get Message
     ${message} =    Get Value    message
     RETURN    ${message}
 
+Get Message Signature
+    ${signature} =    Get Value    msgSignature
+    RETURN    ${signature}
+
 Address Derive From Index
     [Tags]    address    derive
     [Arguments]    ${index}    ${coin}
